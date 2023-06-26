@@ -11,7 +11,7 @@ jobs:
         uses: action/checkout@v3
       - name: run docker action
         id: hello-action
-        uses: ./github/actions/hello-world-docker-action
+        uses: ./.github/actions/hello-world-docker-action
         with: 
           whom-to-greet: super-linters
       - name: Print outputs
