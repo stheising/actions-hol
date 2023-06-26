@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "triggered by event: ${{gihub.event_name}}"
+          echo "triggered by event: ${{github.event_name}}"
           echo "branch is ${{ github.ref}} and your repository is ."
       - uses: actions/checkout@v3
       - name: Lit files in the repo
