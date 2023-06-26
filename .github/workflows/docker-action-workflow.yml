@@ -1,0 +1,19 @@
+name: Docker Action
+
+on: [workflow_dispatch]
+
+jobs: 
+  docker-action:
+    name: Running docker action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: action/checkout@v3
+      - name: run docker action
+        id: hello-action
+        uses: ./github/actions/hello-world-docker-action
+        with: 
+          whom-to-greet: super-linters
+      - name: Print outputs
+        run: echo "The time in the container was ${{steps.hello-action.outputs.time }}"
+        
