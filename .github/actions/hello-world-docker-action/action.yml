@@ -1,0 +1,17 @@
+name: "Hello world docker action"
+description: "our first docker action"
+input:
+  whom-to-greet:
+    description: "whom to greet"
+    require: true
+    default: "epo"
+outputs:
+  time:
+    description: "The time we said hello"
+
+runs: 
+  using: "docker"
+  image: "Dockerfile"
+  args: 
+    - ${{ inputs.whom-to-greet }}
+  
